@@ -2,7 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\InfoController;
 use App\Http\Controllers\Api\usersController;
+
 // use App\Http\Controllers\Api\CommunicareController as com;
 // use App\Http\Controllers\Api\nfsApiController as nfs;
 
@@ -13,3 +15,5 @@ use App\Http\Controllers\Api\usersController;
 Route::get('/test',[usersController::class,'test']);
 Route::post('/login',[usersController::class,'loginAccess'])->name('Api.login');
 Route::post('/loginAs',[usersController::class,'loginAs'])->name('Api.loginAs');
+
+Route::resource("/info", [InfoController::class]);

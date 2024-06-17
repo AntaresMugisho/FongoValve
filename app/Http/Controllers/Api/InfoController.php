@@ -63,6 +63,6 @@ class InfoController extends Controller
      */
     public function destroy(Info $info)
     {
-        //
+        $info->delete();
     }
 }
