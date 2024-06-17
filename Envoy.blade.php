@@ -15,7 +15,6 @@
     update-code
     install-dependencies
     up
-    {{-- sitemap --}}
 @endstory
 
 @task("down")
@@ -46,9 +45,4 @@
 @task("up")
     cd {{ $dir }}
     php artisan up
-@endtask
-
-@task("sitemap")
-    cd {{ $dir }}
-    php artisan sitemap:generate
 @endtask
