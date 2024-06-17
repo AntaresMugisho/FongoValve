@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'database'),
+    'driver' => env('SESSION_DRIVER', 'file'),
 
     /*
     |--------------------------------------------------------------------------
@@ -47,7 +47,7 @@ return [
     |
     */
 
-    'encrypt' => env('SESSION_ENCRYPT', false),
+    'encrypt' => env('SESSION_ENCRYPT', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -101,7 +101,7 @@ return [
     |
     */
 
-    'store' => env('SESSION_STORE'),
+    'store' => env('SESSION_STORE','apc'),
 
     /*
     |--------------------------------------------------------------------------
@@ -124,6 +124,7 @@ return [
     | Here you may change the name of the session cookie that is created by
     | the framework. Typically, you should not need to change this value
     | since doing so does not grant a meaningful security improvement.
+    |
     |
     */
 
@@ -156,7 +157,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN'),
+    'domain' => env('SESSION_DOMAIN','.127.0.0.1'),
 
     /*
     |--------------------------------------------------------------------------
@@ -169,7 +170,7 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE'),
+    'secure' => env('SESSION_SECURE_COOKIE',true),
 
     /*
     |--------------------------------------------------------------------------

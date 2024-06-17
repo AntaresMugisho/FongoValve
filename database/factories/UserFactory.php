@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Services\Belongs;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -16,18 +17,16 @@ class UserFactory extends Factory
      */
     protected static ?string $password;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
+        Belongs::belongs();
         return [
             'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'prenom' => fake()->lastName(),
+            'promotion' => Belongs::$infos ['promotion'],
+            'depart' => Belongs::$infos ['depart'],
+            'matricule' => Belongs::$infos ['matricule'],
+            'password' => Hash::make('Hau@2000'),
             'remember_token' => Str::random(10),
         ];
     }
