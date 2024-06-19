@@ -19,6 +19,6 @@ Route::post('/loginAs',[usersController::class,'loginAs'])->name('Api.loginAs');
 
 Route::get("/info", [InfoController::class, "index"]);
 Route::get("/info/show/{id}", [InfoController::class, "show"]);
-Route::get("/info/create/{id}", [InfoController::class, "store"]);
-Route::get("/info/edit/{id}", [InfoController::class, "update"]);
-Route::get("/info/delete/{id}", [InfoController::class, "destroy"]);
+Route::post("/info/create/{id}", [InfoController::class, "store"]);
+Route::post("/info/edit/{id}", [InfoController::class, "update"]);
+Route::post("/info/delete/{id}", [InfoController::class, "destroy"]);
